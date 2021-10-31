@@ -7,16 +7,16 @@
 // })
 
 
-fetch('http://localhost:3000/weather?address=boston').then((Response) => {
-    Response.json().then((data) => {
-        if (data.error) {
-        console.log(data)
-    } else {
-        console.log(data.location)
-        console.log(data.forecast)
-    }
-    })
-})
+// fetch('http://localhost:3000/weather?address=boston').then((Response) => {
+//     Response.json().then((data) => {
+//         if (data.error) {
+//         console.log(data)
+//     } else {
+//         console.log(data.location)
+//         console.log(data.forecast)
+//     }
+//     })
+// })
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
@@ -30,8 +30,8 @@ weatherForm.addEventListener('submit', (e) => {
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
-
-    fetch('http://localhost:3000/weather?address=' + location).then((Response) => {
+    //http://localhost:3000/
+    fetch('weather?address=' + location).then((Response) => {
         Response.json().then((data) => {
             if (data.error) {
             messageOne.textContent = data.error
